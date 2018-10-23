@@ -1,4 +1,4 @@
-Function Scaffold-CsTemplate([String]$Template, [String]$Project, [String]$OutputPath)
+﻿Function Scaffold-CsTemplate([String]$Template, [String]$Project, [String]$OutputPath)
 {
     if ($Delete)
     {

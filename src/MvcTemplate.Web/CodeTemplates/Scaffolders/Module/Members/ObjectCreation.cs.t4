@@ -1,4 +1,4 @@
-<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
 <#@ Output Extension="cs" #>
 public static <#= Model.Model #> Create<#= Model.Model #>(Int32 id = 0)
 {

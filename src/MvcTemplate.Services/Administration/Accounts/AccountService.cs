@@ -1,4 +1,4 @@
-using MvcTemplate.Components.Security;
+﻿using MvcTemplate.Components.Security;
 using MvcTemplate.Data.Core;
 using MvcTemplate.Objects;
 using System;

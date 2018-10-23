@@ -1,4 +1,4 @@
-[T4Scaffolding.Scaffolder(Description = "Creates default module controller, service, model, view model and views")][CmdletBinding()]
+﻿[T4Scaffolding.Scaffolder(Description = "Creates default module controller, service, model, view model and views")][CmdletBinding()]
 param(
     [parameter(Mandatory = $true)][String]$Model,
     [parameter(Mandatory = $true)][String]$Controller,

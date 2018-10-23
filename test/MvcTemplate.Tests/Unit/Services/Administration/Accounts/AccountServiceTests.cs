@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MvcTemplate.Components.Security;
 using MvcTemplate.Data.Core;

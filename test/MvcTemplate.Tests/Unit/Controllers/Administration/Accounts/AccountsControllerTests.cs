@@ -1,4 +1,4 @@
-using MvcTemplate.Components.Security;
+﻿using MvcTemplate.Components.Security;
 using MvcTemplate.Controllers.Administration;
 using MvcTemplate.Objects;
 using MvcTemplate.Services;

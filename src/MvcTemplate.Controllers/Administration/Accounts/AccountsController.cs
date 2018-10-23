@@ -1,4 +1,4 @@
-using MvcTemplate.Components.Mvc;
+﻿using MvcTemplate.Components.Mvc;
 using MvcTemplate.Objects;
 using MvcTemplate.Services;
 using MvcTemplate.Validators;
