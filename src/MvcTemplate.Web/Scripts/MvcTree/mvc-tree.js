@@ -1,9 +1,9 @@
 var MvcTree = (function () {
-    function MvcTree(element) {
+    function MvcTree(element, options) {
         var tree = this;
         element = tree.closestTree(element);
         if (element.dataset.id) {
-            return tree.instances[parseInt(element.dataset.id)];
+            return tree.instances[parseInt(element.dataset.id)].set(options || {});
         }
 
         tree.values = {};
@@ -11,6 +11,7 @@ var MvcTree = (function () {
         tree.element.dataset.id = tree.instances.length;
         tree.ids = tree.element.querySelector('.mvc-tree-ids');
         tree.view = tree.element.querySelector('.mvc-tree-view');
+        tree.readonly = element.classList.contains('mvc-tree-readonly');
 
         [].forEach.call(tree.ids.children, function (input) {
             tree.values[input.value] = input;
@@ -21,6 +22,7 @@ var MvcTree = (function () {
         });
 
         tree.instances.push(tree);
+        tree.set(options || {});
         tree.bind();
     }
 
@@ -38,6 +40,17 @@ var MvcTree = (function () {
             }
 
             return tree;
+        },
+        set: function (options) {
+            var tree = this;
+
+            tree.readonly = options.readonly == null ? tree.readonly : options.readonly;
+
+            if (tree.readonly) {
+                tree.element.classList.add('mvc-tree-readonly');
+            } else {
+                tree.element.classList.remove('mvc-tree-readonly');
+            }
         },
 
         uncheck: function (branch) {
@@ -142,11 +155,13 @@ var MvcTree = (function () {
                 node.addEventListener('click', function (e) {
                     e.preventDefault();
 
-                    var branch = this.parentElement;
-                    if (branch.classList.contains('mvc-tree-checked')) {
-                        tree.uncheck(branch);
-                    } else {
-                        tree.check(branch);
+                    if (!tree.readonly) {
+                        var branch = this.parentElement;
+                        if (branch.classList.contains('mvc-tree-checked')) {
+                            tree.uncheck(branch);
+                        } else {
+                            tree.check(branch);
+                        }
                     }
                 });
             });

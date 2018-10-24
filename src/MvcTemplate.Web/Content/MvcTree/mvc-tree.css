@@ -72,6 +72,10 @@
     background-position: -164px -36px;
 }
 
+.mvc-tree-readonly a {
+    cursor: default;
+}
+
 .mvc-tree-checked > a::before {
     background-position: -228px -4px;
 }

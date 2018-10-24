@@ -8,7 +8,7 @@ namespace MvcTemplate.Components.Extensions
 {
     public static class MvcTreeExtensions
     {
-        public static MvcHtmlString TreeFor<TModel>(this HtmlHelper<TModel> html, Expression<Func<TModel, MvcTree>> expression, Int32? hideDepth = null)
+        public static MvcHtmlString TreeFor<TModel>(this HtmlHelper<TModel> html, Expression<Func<TModel, MvcTree>> expression, Int32? hideDepth = null, Boolean readOnly = false)
         {
             MvcTree model = ModelMetadata.FromLambdaExpression(expression, html.ViewData).Model as MvcTree;
             String name = ExpressionHelper.GetExpressionText(expression) + ".SelectedIds";
@@ -16,6 +16,10 @@ namespace MvcTemplate.Components.Extensions
 
             tree.AddCssClass("mvc-tree");
             tree.Attributes["data-for"] = name;
+
+            if (readOnly)
+                tree.Attributes["class"] += " mvc-tree-readonly";
+
             tree.InnerHtml = IdsFor(name, model) + ViewFor(model, hideDepth);
 
             return new MvcHtmlString(tree.ToString());

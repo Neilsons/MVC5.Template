@@ -25,6 +25,12 @@
             new MvcDatalist(element, { readonly: true });
         });
     }
+
+    if (window.MvcTree) {
+        widgets.find('.mvc-tree').each(function (i, element) {
+            new MvcTree(element, { readonly: true });
+        });
+    }
 })();
 
 // Input focus binding
