@@ -127,7 +127,7 @@
     <value>'{0}' field must only contain digits.</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>'{0}' field is not a valid e-mail address.</value>
+    <value>'{0}' field is not a valid email address.</value>
   </data>
   <data name="EqualTo" xml:space="preserve">
     <value>'{0}' field must be equal to '{1}'.</value>

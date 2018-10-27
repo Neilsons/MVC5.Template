@@ -122,11 +122,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administration\Accounts\AccountView\Texts.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Texts.resx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Administration\Accounts\AccountView\Titles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,11 +238,6 @@
     <EmbeddedResource Include="Views\Administration\Accounts\AccountView\Messages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Administration\Accounts\AccountView\Texts.lt.resx" />
-    <EmbeddedResource Include="Views\Administration\Accounts\AccountView\Texts.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Administration\Accounts\AccountView\Titles.lt.resx" />
     <EmbeddedResource Include="Views\Administration\Accounts\AccountView\Titles.resx">

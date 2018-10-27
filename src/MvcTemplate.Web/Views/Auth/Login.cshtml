@@ -1,5 +1,4 @@
-﻿@using Texts = MvcTemplate.Resources.Views.Administration.Accounts.AccountView.Texts
-@using MvcTemplate.Resources.Views.Auth.AccountLoginView
+﻿@using MvcTemplate.Resources.Views.Auth.AccountLoginView
 
 @model AccountLoginView
 
@@ -53,5 +52,5 @@
 
 <div class="separator"></div>
 <div class="auth-actions">
-    <a class="text fa fa-unlock" href="@Url.Action("Recover")" data-toggle="tooltip" data-original-title="@Texts.LostPassword" data-placement="bottom" data-delay="1"></a>
+    <a class="text fa fa-unlock" href="@Url.Action("Recover")" data-toggle="tooltip" data-original-title="@Strings.LostPassword" data-placement="bottom" data-delay="1"></a>
 </div>

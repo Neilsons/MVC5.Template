@@ -130,7 +130,7 @@
     <value>Your account is locked.</value>
   </data>
   <data name="UniqueEmail" xml:space="preserve">
-    <value>E-mail address is already being used.</value>
+    <value>Email address is already being used.</value>
   </data>
   <data name="UniqueUsername" xml:space="preserve">
     <value>Username is already taken.</value>
