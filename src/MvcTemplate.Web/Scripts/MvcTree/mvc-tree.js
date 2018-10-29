@@ -31,6 +31,11 @@ var MvcTree = (function () {
 
         closestTree: function (element) {
             var tree = element;
+
+            if (!tree) {
+                throw new Error('Tree element was not specified.');
+            }
+
             while (tree.parentElement && !tree.classList.contains('mvc-tree')) {
                 tree = tree.parentElement;
             }
