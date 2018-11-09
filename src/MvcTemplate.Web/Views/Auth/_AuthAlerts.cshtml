@@ -1,7 +1,7 @@
 ﻿<div class="alerts">
     @foreach (Alert alert in TempData["Alerts"] as AlertsContainer)
     {
-        <div class="alert alert-@alert.Type.ToString().ToLowerInvariant()" data-timeout="@alert.Timeout">
+        <div id="@alert.Id" class="alert alert-@alert.Type.ToString().ToLowerInvariant()" data-timeout="@alert.Timeout">
             <span>@alert.Message</span><span class="close">×</span>
         </div>
     }

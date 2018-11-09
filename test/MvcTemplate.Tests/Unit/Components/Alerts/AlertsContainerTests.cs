@@ -58,6 +58,7 @@ namespace MvcTemplate.Tests.Unit.Components.Alerts
             Assert.Equal(AlertType.Info, actual.Type);
             Assert.Equal("Message", actual.Message);
             Assert.Equal(1, actual.Timeout);
+            Assert.Null(actual.Id);
         }
 
         #endregion
@@ -74,6 +75,7 @@ namespace MvcTemplate.Tests.Unit.Components.Alerts
             Assert.Equal(AlertType.Danger, actual.Type);
             Assert.Equal("Message", actual.Message);
             Assert.Equal(1, actual.Timeout);
+            Assert.Null(actual.Id);
         }
 
         #endregion
@@ -90,6 +92,7 @@ namespace MvcTemplate.Tests.Unit.Components.Alerts
             Assert.Equal(AlertType.Success, actual.Type);
             Assert.Equal("Message", actual.Message);
             Assert.Equal(1, actual.Timeout);
+            Assert.Null(actual.Id);
         }
 
         #endregion
@@ -106,6 +109,7 @@ namespace MvcTemplate.Tests.Unit.Components.Alerts
             Assert.Equal(AlertType.Warning, actual.Type);
             Assert.Equal("Message", actual.Message);
             Assert.Equal(1, actual.Timeout);
+            Assert.Null(actual.Id);
         }
 
         #endregion
