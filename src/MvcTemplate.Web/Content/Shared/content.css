@@ -102,6 +102,9 @@ body.public .public-action {
 .control-content {
   min-height: 34px;
 }
+.control-content input::-ms-clear {
+  display: none;
+}
 .control-content input[type="checkbox"] {
   margin: 13px 0 9px;
   height: 14px;

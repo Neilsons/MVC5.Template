@@ -36,6 +36,9 @@
   height: 30px;
   width: 100%;
 }
+.auth-content .input-group input::-ms-clear {
+  display: none;
+}
 .auth-content .input-group input:-webkit-autofill,
 .auth-content .input-group input:-webkit-autofill:focus {
   box-shadow: 0 50px #ffffff inset;
