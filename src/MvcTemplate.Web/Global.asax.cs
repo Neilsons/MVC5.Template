@@ -99,8 +99,8 @@ namespace MvcTemplate.Web
         public virtual void RegisterGlobalizationLanguages()
         {
             GlobalizationManager.Languages = DependencyResolver.Current.GetService<ILanguages>();
-            (MvcGrid.Filters as GridFilters).BooleanFalseOptionText = () => Strings.No;
-            (MvcGrid.Filters as GridFilters).BooleanTrueOptionText = () => Strings.Yes;
+            MvcGrid.Filters.BooleanFalseOptionText = () => Strings.No;
+            MvcGrid.Filters.BooleanTrueOptionText = () => Strings.Yes;
         }
         public virtual void RegisterModelMetadataProvider()
         {

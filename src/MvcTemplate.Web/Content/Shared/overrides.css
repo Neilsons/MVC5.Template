@@ -138,6 +138,7 @@ a:hover {
 }
 /* mvc.grid */
 .mvc-grid {
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 .mvc-grid thead {
@@ -153,6 +154,7 @@ a:hover {
 .mvc-grid th,
 .mvc-grid td {
   border-width: 0 0 1px 0;
+  padding: 0.5rem;
 }
 .mvc-grid th + th,
 .mvc-grid td + td {
@@ -169,7 +171,7 @@ a:hover {
 .mvc-grid-filter:hover {
   background: rgba(0, 0, 0, 0.03);
 }
-.mvc-grid-pager .active a {
+.mvc-grid-pager .active {
   background: linear-gradient(#6f93a7, #2a4e62);
   border-color: #59788a;
   color: #ffffff;

@@ -1,5 +1,5 @@
 ﻿/*!
- * Datalist 6.1.1
+ * Datalist 6.2.0
  * https://github.com/NonFactors/MVC5.Datalist
  *
  * Copyright © NonFactors
@@ -494,6 +494,11 @@ var MvcDatalistAutocomplete = (function () {
 
                         autocomplete.element.appendChild(item);
                         autocomplete.bind(item, [data[i]]);
+
+                        if (i == 0) {
+                            autocomplete.activeItem = item;
+                            item.classList.add('active');
+                        }
                     }
 
                     if (data.length) {
@@ -509,16 +514,9 @@ var MvcDatalistAutocomplete = (function () {
                 return;
             }
 
-            if (this.activeItem) {
-                this.activeItem.classList.remove('active');
-                this.activeItem = this.activeItem.previousElementSibling;
-            } else {
-                this.activeItem = this.element.lastElementChild;
-            }
-
-            if (this.activeItem) {
-                this.activeItem.classList.add('active');
-            }
+            this.activeItem.classList.remove('active');
+            this.activeItem = this.activeItem.previousElementSibling || this.element.lastElementChild;
+            this.activeItem.classList.add('active');
         },
         next: function () {
             if (!this.element.parentElement) {
@@ -527,16 +525,9 @@ var MvcDatalistAutocomplete = (function () {
                 return;
             }
 
-            if (this.activeItem) {
-                this.activeItem.classList.remove('active');
-                this.activeItem = this.activeItem.nextElementSibling;
-            } else {
-                this.activeItem = this.element.firstElementChild;
-            }
-
-            if (this.activeItem) {
-                this.activeItem.classList.add('active');
-            }
+            this.activeItem.classList.remove('active');
+            this.activeItem = this.activeItem.nextElementSibling || this.element.firstElementChild;
+            this.activeItem.classList.add('active');
         },
         show: function () {
             var search = this.datalist.search.getBoundingClientRect();
@@ -669,6 +660,8 @@ var MvcDatalist = (function () {
             return options;
         },
         set: function (options) {
+            this.options.loadingDelay = options.loadingDelay == null ? this.options.loadingDelay : options.loadingDelay;
+            this.options.searchDelay = options.searchDelay == null ? this.options.searchDelay : options.searchDelay;
             this.autocomplete.options = this.extend(this.autocomplete.options, options.autocomplete);
             this.setReadonly(options.readonly == null ? this.readonly : options.readonly);
             this.dialog.options = this.extend(this.dialog.options, options.dialog);
@@ -782,8 +775,10 @@ var MvcDatalist = (function () {
             }
 
             if (triggerChanges) {
-                var change = new Event('change');
-                if (typeof Event !== 'function') {
+                var change = null;
+                if (typeof (Event) === 'function') {
+                    change = new Event('change');
+                } else {
                     change = document.createEvent('Event');
                     change.initEvent('change', true, true);
                 }
@@ -992,8 +987,10 @@ var MvcDatalist = (function () {
                 } else if (e.which == 13 && datalist.autocomplete.activeItem) {
                     e.preventDefault();
 
-                    var click = new Event('click');
-                    if (typeof Event !== 'function') {
+                    var click = null;
+                    if (typeof (Event) === 'function') {
+                        click = new Event('click');
+                    } else {
                         click = document.createEvent('Event');
                         click.initEvent('click', true, true);
                     }

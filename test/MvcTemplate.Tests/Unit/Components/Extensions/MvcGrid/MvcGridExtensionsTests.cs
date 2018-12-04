@@ -116,8 +116,8 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
+            Assert.Empty(actual.Title.ToString());
             Assert.Equal("{0:d}", actual.Format);
-            Assert.Null(actual.Title.ToString());
             Assert.Single(columns);
         }
 
@@ -134,8 +134,8 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
+            Assert.Empty(actual.Title.ToString());
             Assert.Equal("{0:d}", actual.Format);
-            Assert.Null(actual.Title.ToString());
             Assert.Single(columns);
         }
 
@@ -152,7 +152,7 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
-            Assert.Null(actual.Title.ToString());
+            Assert.Empty(actual.Title.ToString());
             Assert.False(actual.Filter.IsMulti);
             Assert.Single(columns);
         }
@@ -194,7 +194,7 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
-            Assert.Null(actual.Title.ToString());
+            Assert.Empty(actual.Title.ToString());
             Assert.False(actual.Filter.IsMulti);
             Assert.Single(columns);
         }
@@ -247,8 +247,8 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
+            Assert.Empty(actual.Title.ToString());
             Assert.Equal("{0:g}", actual.Format);
-            Assert.Null(actual.Title.ToString());
             Assert.Single(columns);
         }
 
@@ -265,8 +265,8 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-center", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
+            Assert.Empty(actual.Title.ToString());
             Assert.Equal("{0:g}", actual.Format);
-            Assert.Null(actual.Title.ToString());
             Assert.Single(columns);
         }
 
@@ -283,7 +283,7 @@ namespace MvcTemplate.Tests.Unit.Components.Extensions
 
             Assert.Equal("text-left", actual.CssClasses);
             Assert.Equal(expression, actual.Expression);
-            Assert.Null(actual.Title.ToString());
+            Assert.Empty(actual.Title.ToString());
             Assert.Single(columns);
         }
 
