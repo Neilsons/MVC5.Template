@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
@@ -10,13 +10,13 @@ namespace MvcTemplate.Components.Extensions
 {
     public static class ContentExtensions
     {
-        private static Dictionary<String, IHtmlString> Scripts { get; }
-        private static Dictionary<String, IHtmlString> Styles { get; }
+        private static ConcurrentDictionary<String, IHtmlString> Scripts { get; }
+        private static ConcurrentDictionary<String, IHtmlString> Styles { get; }
 
         static ContentExtensions()
         {
-            Scripts = new Dictionary<String, IHtmlString>();
-            Styles = new Dictionary<String, IHtmlString>();
+            Scripts = new ConcurrentDictionary<String, IHtmlString>();
+            Styles = new ConcurrentDictionary<String, IHtmlString>();
         }
 
         public static IHtmlString RenderControllerScript(this HtmlHelper html)
