@@ -1,6 +1,9 @@
 ![Version](https://img.shields.io/github/release/NonFactors/MVC.Template.svg?style=plastic)
 ![License](https://img.shields.io/badge/license-MIT-green.svg?style=plastic)
 
+# Notice
+This project is no longer maintained. Instead, all the future development will be focused on the [asp net core template](https://github.com/NonFactors/MVC6.Template).
+
 # Installation
 1. Before opening project rename it using "Rename.exe".
 2. Build project or restore NuGet packages.
@@ -19,7 +22,3 @@
 - Audit log.
 - Site map.
 - Tests.
-
-# Contribution
-- Before you start writing a pull request you should discuss it using GitHub issues.
-- Bugs, improvements or features should be reported using GitHub issues.
